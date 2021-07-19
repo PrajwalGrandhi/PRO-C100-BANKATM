@@ -15,7 +15,11 @@ class ATM(object):
         return self.cardpin
 
     def CashWithdrawl(self):
-       self.balance=self.balance-10;
+       a=int(input("How much do you want withdraw: "))
+       if(a>self.balance):
+           print("There is no enough balance to withdraw cash")
+       else:
+           self.balance=self.balance-a;
 
     def BalanceEnquiry(self):
         print(self.balance)
@@ -26,8 +30,8 @@ pin=int(input("Enter the pin: "))
 holder1=ATM("Larry",0000000000000000,pin)
 #holder2=ATM("Sergey",9999999999999999,4321)
 
-print(holder1.getName())
-#print(holder2.getName())
+#print(holder1.getName())
+##print(holder2.getName())
 
 opt=int(input("Enter 1 for(CashWithDrawl) or 2 for(BalanceEnquiry)"))
 
